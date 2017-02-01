@@ -73,15 +73,7 @@
   <script type="text/template" id="no-results-template">
     <div id="no-results-message">
       <p>We didn't find any results for the search <em>"{{ query }}"</em>.</p>
-      <ul>
-        {{#filters}}
-        <li class="{{ class }}" data-facet="{{ facet }}" data-value="{{ facet_value }}">
-          {{ label }}<span class="value">{{ label_value }}</span><a class="remove"><img src="img/remove.svg"/></a>
-        </li>
-        {{/filters}}
-        <br>
-        <a href="" class='clear-all'>Clear all</a>
-      </ul>
+      <a href="" class='clear-all'>Clear all</a>
     </div>
   </script>
 
@@ -90,11 +82,9 @@
    </script>
 
 
-  <script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
   <script src="//cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"></script>
   <script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.common.js"></script>
-  <script src="//cdn.jsdelivr.net/jquery.ion.rangeslider/2.0.12/js/ion.rangeSlider.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
