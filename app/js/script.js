@@ -125,7 +125,7 @@ function handleNoResults(content) {
     $main.className = '';
     return;
   }
-  $main.addClass('no-results');
+  $main.classList = $main.classList.add('no-results');
   $hits.innerHTML = noResultsTemplate.render({query: content.query});
 }
 
@@ -137,7 +137,7 @@ function handleNoResults(content) {
 document.getElementById('right-column').addEventListener('click', e => {
   e.preventDefault();
   const clickedElement = e.target;
-  if (clickedElement.classList.includes('go-to-page')) {
+  if (clickedElement.className.includes('go-to-page')) {
     document.body.scrollTop = 0;
     algoliaHelper.setCurrentPage(Number($(this).data('page')) - 1).search();
   }
@@ -145,15 +145,14 @@ document.getElementById('right-column').addEventListener('click', e => {
 $searchInputIcon.addEventListener('click', e => {
   e.preventDefault();
   $searchInput.value = '';
-  // TODO: does this do a new search? Maybe: algoliaHelper.setQuery('').search();
   $searchInput.focus();
 });
 
 document.getElementById('right-column').addEventListener('click', e => {
   e.preventDefault();
   const clickedElement = e.target;
-  if (clickedElement.classList.includes('clear-all')) {
-    $searchInput.val = '';
+  if (clickedElement.className.includes('clear-all')) {
+    $searchInput.value = '';
     $searchInput.focus();
     algoliaHelper.setQuery('').search();
   }
@@ -166,7 +165,7 @@ function initFromURLParams() {
   const URLString = window.location.search.slice(1);
   const URLParams = algoliasearchHelper.url.getStateFromQueryString(URLString);
   const stateFromURL = Object.assign({}, PARAMS, URLParams);
-  $searchInput.value = stateFromURL.query;
+  $searchInput.value = stateFromURL.query || '';
   algoliaHelper.overrideStateWithoutTriggeringChangeEvent(stateFromURL);
 }
 
@@ -204,5 +203,7 @@ window.addEventListener('popstate', () => {
 // ==============
 
 function toggleIconEmptyInput(query) {
-  $searchInputIcon.toggleClass('empty', query.trim() !== '');
+  if (query.trim().length) {
+    $searchInputIcon.className = $searchInputIcon.className.replace('empty', '');
+  }
 }
