@@ -6,13 +6,11 @@
 </head>
 <body>
 
-
   <header>
     <img src="img/instant-search-logo.png"/>
     <input id="search-input" type="text" autocomplete="off" spellcheck="false" autocorrect="off" placeholder="Search by name, brand, description..."/>
     <div id="search-input-icon"></div>
   </header>
-
 
   <main>
     <div id="left-column">
@@ -29,7 +27,6 @@
   <footer>
     Powered by <a href="http://algolia.com">Algolia</a> - Data from <a href="https://developer.bestbuy.com">Best Buy</a>
   </footer>
-
 
   <script type="text/template" id="hit-template">
     {{#hits}}
@@ -72,9 +69,9 @@
     <img src="{{{result.url}}}"> </img>
   </script>
 
-  <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-  <script src="//cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"></script>
-  <script src="//cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.common.js"></script>
+  <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/hogan.js/3.0.2/hogan.min.common.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
