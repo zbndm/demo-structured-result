@@ -8,6 +8,7 @@
 const APPLICATION_ID = 'VC519DRAY3';
 const SEARCH_ONLY_API_KEY = '5c796d39dcd489e62b89b38dae03fbc4';
 const INDEX_NAME = 'altCorrecTest';
+const STRUCTURED_DATA_INDEX_NAME = 'altCorrecTest_logos';
 const PARAMS = {
   hitsPerPage: 10,
   index: INDEX_NAME,
@@ -17,7 +18,7 @@ const PARAMS = {
 const algolia = algoliasearch(APPLICATION_ID, SEARCH_ONLY_API_KEY);
 const algoliaHelper = algoliasearchHelper(algolia, INDEX_NAME, PARAMS);
 const structuredDataHelper = algoliaHelper.derive(searchParameters => {
-    const params = searchParameters.setIndex('altCorrecTest_logos')
+    const params = searchParameters.setIndex(STRUCTURED_DATA_INDEX_NAME)
     params.getRankingInfo = true
     return params
 });
