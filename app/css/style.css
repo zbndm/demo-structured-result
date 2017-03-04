@@ -23,6 +23,11 @@ main {
 	margin-left: 26%;
 }
 
+em {
+	font-style: normal;
+	background: #fbdde0;
+}
+
 /* SEARCH INPUT
 // ------------------------- */
 
@@ -151,10 +156,7 @@ header img {
 	font-weight: normal;
 	margin-top: 0;
 }
-em {
-	font-style: normal;
-	background: #fbdde0;
-}
+
 .hit-content .hit-description {
 	color: #999;
 }
