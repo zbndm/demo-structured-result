@@ -2,8 +2,6 @@
 <html>
 <head>
   <title>Structured Result Demo</title>
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.ion.rangeslider/2.0.12/css/ion.rangeSlider.css">
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.ion.rangeslider/2.0.12/css/ion.rangeSlider.skinFlat.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -69,10 +67,10 @@
     </div>
   </script>
 
-   <script type="text/template" id="structured-data-template">
-    hello world
-   </script>
-
+  <script type="text/template" id="structured-data-template">
+    <div> {{{result._highlightResult.name.value}}} </div>
+    <img src="{{{result.url}}}"> </img>
+  </script>
 
   <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
   <script src="//cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"></script>
