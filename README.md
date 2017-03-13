@@ -11,9 +11,9 @@ This is a sample project implementing a full page search with structured data re
 Open app/index.html in your browser
 
 Replace the demo credentials with your own:
-- in `src/js/script.js`, set your own `APPLICATION_ID` instead of `"VC519DRAY3"` (which is our demo `APPLICATION_ID`),
-- in `src/js/script.js`, set your own `SEARCH_ONLY_API_KEY` instead of `"5c796d39dcd489e62b89b38dae03fbc4"`,
-- in `src/js/script.js`, set your own `index` names instead of `"altCorrecTest"` and `"altCorrecTest_logos"`
+- in `app/js/script.js`, set your own `APPLICATION_ID` instead of `"VC519DRAY3"` (which is our demo `APPLICATION_ID`),
+- in `app/js/script.js`, set your own `SEARCH_ONLY_API_KEY` instead of `"5c796d39dcd489e62b89b38dae03fbc4"`,
+- in `app/js/script.js`, set your own `INDEX_NAME` and `STRUCTURED_DATA_INDEX_NAME` names instead of `"altCorrecTest"` and `"altCorrecTest_logos"`
 
 # Background
 
