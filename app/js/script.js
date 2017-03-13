@@ -8,6 +8,7 @@
 const APPLICATION_ID = 'VC519DRAY3';
 const SEARCH_ONLY_API_KEY = '5c796d39dcd489e62b89b38dae03fbc4';
 const INDEX_NAME = 'altCorrecTest';
+const STRUCTURED_DATA_INDEX_NAME = 'altCorrecTest_logos';
 const PARAMS = {
   hitsPerPage: 10,
   index: INDEX_NAME,
@@ -16,7 +17,11 @@ const PARAMS = {
 // Client + Helper initialization
 const algolia = algoliasearch(APPLICATION_ID, SEARCH_ONLY_API_KEY);
 const algoliaHelper = algoliasearchHelper(algolia, INDEX_NAME, PARAMS);
-const structuredDataHelper = algoliaHelper.derive(searchParameters => searchParameters.setIndex('structured_data'));
+const structuredDataHelper = algoliaHelper.derive(searchParameters => {
+    const params = searchParameters.setIndex(STRUCTURED_DATA_INDEX_NAME)
+    params.getRankingInfo = true
+    return params
+});
 
 // DOM BINDING
 const $searchInput = document.getElementById('search-input');
@@ -114,7 +119,16 @@ function renderPagination(content) {
 }
 
 function renderStructuredData(content) {
-  $structuredData.innerHTML = structuredDataTemplate.render(content);
+  if (content.hits.length !== 0) {
+    // check to see if all matching words are adjacent and in order
+    if (content.hits[0]._rankingInfo.words - 1 === content.hits[0]._rankingInfo.proximityDistance) {
+      // render only one result
+      $structuredData.innerHTML = structuredDataTemplate.render({result: content.hits[0]});
+      $structuredData.className = 'show-structured-data';
+      return true
+    }
+  }
+  $structuredData.className = '';
 }
 
 // NO RESULTS

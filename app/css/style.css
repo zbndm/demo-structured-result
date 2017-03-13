@@ -1,5 +1,3 @@
-
-
 /* GENERAL
 // ------------------------- */
 
@@ -25,7 +23,10 @@ main {
 	margin-left: 26%;
 }
 
-
+em {
+	font-style: normal;
+	background: #fbdde0;
+}
 
 /* SEARCH INPUT
 // ------------------------- */
@@ -80,7 +81,41 @@ header img {
 	background-image: url(../img/delete-icon.png);
 }
 
+/* STRUCTURED RESULT
+// ------------------------- */
 
+#structured-data {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-top: 23px;
+	overflow: hidden;
+	border-color: #eee;
+
+	/* for animation */
+	max-height: 0px;
+	padding: 0;
+	opacity: 0;
+	transition: all 0.3s ease-in;
+}
+
+#structured-data.show-structured-data {
+	max-height: 300px;
+	padding: 10px;
+	opacity: 1;
+	border: 1px solid #eee;
+}
+
+#structured-data div {
+	display: block;
+	text-align: center;
+}
+
+#structured-data img {
+	padding-top: 20px;
+	display: block;
+	margin: 0 auto;
+}
 
 /* HITS
 // ------------------------- */
@@ -121,15 +156,10 @@ header img {
 	font-weight: normal;
 	margin-top: 0;
 }
-.hit-content em {
-	font-style: normal;
-	background: #fbdde0;
-}
+
 .hit-content .hit-description {
 	color: #999;
 }
-
-
 
 /* PAGINATION
 // ------------------------- */
@@ -180,8 +210,6 @@ header img {
 	background: none;
 }
 
-
-
 /* SORT-BY
 // ------------------------- */
 
@@ -217,8 +245,6 @@ header img {
 	border-left: 4px solid transparent;
 }
 
-
-
 /* STATS
 // ------------------------- */
 
@@ -229,8 +255,6 @@ header img {
 	font-size: 12px;
 	color: #999;
 }
-
-
 
 /* FACETS
 // ------------------------- */
@@ -296,8 +320,6 @@ header img {
 	background-position: -72px 0;
 }
 
-
-
 /* No-result
 // ------------------------- */
 
@@ -355,8 +377,6 @@ a.clear-all:hover {
 	transition: border-color .3s ease-in;
 	border-color: #999;
 }
-
-
 
 /* FOOTER
 // ------------------------- */
