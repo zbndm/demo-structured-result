@@ -5,10 +5,10 @@
 // ==============
 
 // Replace with your own values
-const APPLICATION_ID = 'VC519DRAY3';
-const SEARCH_ONLY_API_KEY = '5c796d39dcd489e62b89b38dae03fbc4';
-const INDEX_NAME = 'altCorrecTest';
-const STRUCTURED_DATA_INDEX_NAME = 'altCorrecTest_logos';
+const APPLICATION_ID = 'latency';
+const SEARCH_ONLY_API_KEY = '6be0576ff61c053d5f9a3225e2a90f76';
+const INDEX_NAME = 'bestbuyProducts';
+const STRUCTURED_DATA_INDEX_NAME = 'bestbuyProducts_logos';
 const PARAMS = {
   hitsPerPage: 10,
   index: INDEX_NAME,
