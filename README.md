@@ -1,43 +1,31 @@
-# Structured Data Demo
+# Structured Results Demo
 
 This is a sample project implementing a full page search with structured data results using [Algolia](https://www.algolia.com).
 
-![Structured Data](./structured_data.gif)
+Learn more on the [Structure Results](https://www.algolia.com/doc/guides/building-search-ui/resources/ui-and-ux-patterns/tutorials/structured-results/js/) guide.
+
+## Preview
+
+![Preview](https://user-images.githubusercontent.com/6137112/73277871-0bd74a00-41eb-11ea-8c91-a701e5b4c36c.gif)
 
 ## Usage
 
 ### Open the project
 
-Open app/index.html in your browser
+To run this project locally, replace the Algolia credentials in [`.env`](.env):
 
-Replace the demo credentials with your own:
-- in `app/js/script.js`, set your own `APPLICATION_ID` instead of `"VC519DRAY3"` (which is our demo `APPLICATION_ID`),
-- in `app/js/script.js`, set your own `SEARCH_ONLY_API_KEY` instead of `"5c796d39dcd489e62b89b38dae03fbc4"`,
-- in `app/js/script.js`, set your own `INDEX_NAME` and `STRUCTURED_DATA_INDEX_NAME` names instead of `"altCorrecTest"` and `"altCorrecTest_logos"`
+```sh
+ALGOLIA_APP_ID=YOUR_APP_ID
+ALGOLIA_API_KEY=YOUR_API_KEY
+ALGOLIA_INDEX_NAME_MAIN=YOUR_MAIN_INDEX
+ALGOLIA_INDEX_NAME_STRUCTURED=YOUR_STRUCTURED_INDEX
+```
 
-# Background
+Then, install the dependencies and run the local server:
 
-One of the more interesting, more-recent additions to search engine results pages are so-called "structured results." Different people have different names: Google calls them "knowledge graph cards" while Bing has "visually rich snippets." DuckDuckGo, Yandex, and Baidu, all have them as well.
+```sh
+yarn
+yarn start
+```
 
-How about your search?
-
-Uses for Structured Results
-
-You'll want to use structured results whenever there is a singular piece of information you want to stand out from the rest for a given query. Here are a few examples:
-    • Sponsored results on an eCommerce search. See our guide specific to this topic here.
-    • Movie times on an entertainment website
-    • User details on a CRM
-
-This example uses sample data from the Best Buy API and top tech consumer brands and their respective logos for structured data results.
-
-## Features
-
-* Full-JavaScript/frontend implementation based on [algolia search helper](https://community.algolia.com/algoliasearch-helper-js/)
-* Results page refreshed as you type
-* Recommended Structured Data results as you type
-* Hits
-* Pagination
-* Relevant results from the first keystroke
-* Typo-tolerance
-* By Relevance
-* Backup search parameters in the URL
+Open http://localhost:3000 to see the app.

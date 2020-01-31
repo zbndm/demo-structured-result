@@ -1,6 +1,7 @@
 module.exports = {
-  "extends": "algolia",
-  "rules": {
-    "space-before-blocks": ["error"],
-  }
+  env: {
+    node: true,
+    commonjs: true,
+  },
+  extends: ['algolia'],
 };
