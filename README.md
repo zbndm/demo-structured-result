@@ -29,3 +29,9 @@ yarn start
 ```
 
 Open http://localhost:3000 to see the app.
+
+## Release
+
+This demo is released by [Pocci](https://pocci.algolia.com).
+
+After making change, you need to run `yarn run build` and commit the change in `build/` folder.
