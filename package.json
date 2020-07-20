@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "parcel index.html --port 3000",
-    "build": "parcel build index.html --public-url . -d build",
+    "start": "parcel app.html --port 3000",
+    "build": "parcel build app.html --public-url . -d build",
     "lint": "eslint --ext .js,.ts,.tsx ."
   },
   "dependencies": {
